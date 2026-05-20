@@ -262,12 +262,14 @@ const LandingPage = () => {
     e.currentTarget.style.color = 'white';
     e.currentTarget.style.transform = 'scale(1.05)';
     e.currentTarget.style.boxShadow = '0 20px 40px rgba(255, 111, 174, 0.45)';
+    document.getElementById('cta-arrow').style.transform = 'translateX(5px)';
   }}
   onMouseLeave={(e) => {
     e.currentTarget.style.backgroundColor = 'white';
     e.currentTarget.style.color = '#0f172a';
     e.currentTarget.style.transform = 'scale(1)';
     e.currentTarget.style.boxShadow = '0 4px 15px rgba(255,255,255,0.15)';
+    document.getElementById('cta-arrow').style.transform = 'translateX(0px)';
   }}
   onMouseDown={(e) => {
     e.currentTarget.style.transform = 'scale(0.95)';
@@ -278,6 +280,7 @@ const LandingPage = () => {
 >
   <span>Try Ment2Be</span>
   <svg 
+    id="cta-arrow"
     style={{ width: '20px', height: '20px', transition: 'transform 0.3s ease' }}
     fill="none" 
     stroke="currentColor" 
