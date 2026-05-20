@@ -79,8 +79,11 @@ const ProfileCarousel = () => {
         </div>
 
         {/* Profile Info */}
-        <h3 className="text-2xl font-bold text-white mb-1">{profiles[currentProfile].name}</h3>
-        <p className="text-gray-400 mb-6">{profiles[currentProfile].role}</p>
+<h3 className="text-2xl font-bold text-black dark:text-white mb-1">
+  {profiles[currentProfile].name}
+</h3>        <p className="text-gray-700 dark:text-gray-400 mb-6">
+  {profiles[currentProfile].role}
+</p>
 
         {/* Rating Stars */}
         <div className="flex justify-center mb-4">
@@ -97,8 +100,7 @@ const ProfileCarousel = () => {
         </div>
 
         {/* Review Text */}
-        <p className="text-gray-300 text-lg italic leading-relaxed mb-8">
-          "{profiles[currentProfile].review}"
+<p className="text-gray-700 dark:text-gray-300 text-lg italic leading-relaxed mb-8">          "{profiles[currentProfile].review}"
         </p>
 
         {/* Carousel Indicators */}

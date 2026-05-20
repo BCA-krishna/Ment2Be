@@ -138,8 +138,7 @@ const PhoneLoginForm = ({ onBack, onNavigateToRegister, role, setRole, isLoading
       {/* Back Button */}
       <button
         onClick={onBack}
-        className="flex items-center text-gray-400 hover:text-white mb-6 transition-colors"
-      >
+className="flex items-center text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white mb-6 transition-colors font-medium"      >
         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
@@ -147,8 +146,9 @@ const PhoneLoginForm = ({ onBack, onNavigateToRegister, role, setRole, isLoading
       </button>
 
       {/* Main Heading */}
-      <h1 className="text-3xl font-bold text-white mb-2">Log into Ment2Be</h1>
-      
+<h1 className="text-3xl font-bold text-black dark:text-white mb-2">
+  Log into Ment2Be
+</h1>      
       {/* Subtitle */}
       <p className="text-gray-400 mb-8">
         New to Ment2Be? Sign up as a{" "}
@@ -178,13 +178,20 @@ const PhoneLoginForm = ({ onBack, onNavigateToRegister, role, setRole, isLoading
       <div className="flex text-gray-400 font-medium text-sm mb-6">
         <button
           onClick={() => setRole("student")}
-          className={`px-4 pb-2 ${role === "student" ? "border-b-2 border-blue-500 text-white" : "text-gray-500"}`}
-        >
+className={`px-4 pb-2 ${
+  role === "student"
+    ? "border-b-2 border-blue-500 text-black dark:text-white"
+    : "text-gray-500"
+}`}        >
           I'm a student
         </button>
         <button
           onClick={() => setRole("mentor")}
-          className={`px-4 pb-2 ${role === "mentor" ? "border-b-2 border-blue-500 text-white" : "text-gray-500"}`}
+          className={`px-4 pb-2 ${
+  role === "mentor"
+    ? "border-b-2 border-blue-500 text-black dark:text-white"
+    : "text-gray-500"
+}`}
         >
           I'm a mentor
         </button>

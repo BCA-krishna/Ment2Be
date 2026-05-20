@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Moon, Sun } from "lucide-react";
 import logoHat from "../assets/logo-hat.png";
 import { useTheme } from "../hooks/useTheme";
@@ -7,6 +7,7 @@ import { useTheme } from "../hooks/useTheme";
 const LandingNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -254,32 +255,36 @@ const LandingNavbar = () => {
               © Arsh Chauhan
             </div>
 
-            <Link
-              to="/login"
-              className="hidden md:block px-4 py-2 text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors text-sm"
-            >
-              Log in
-            </Link>
+            {location.pathname !== "/login" && (
+  <Link
+    to="/login"
+    className="hidden md:block px-4 py-2 text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors text-sm"
+  >
+    Log in
+  </Link>
+)}
 
-            <Link
-              to="/register"
-              className="px-3 py-1.5 md:px-5 md:py-2 bg-slate-900 text-white dark:bg-white dark:text-black font-medium rounded-lg hover:bg-slate-800 dark:hover:bg-gray-100 transition-colors text-xs md:text-sm flex items-center space-x-2"
-            >
-              <span>Get Started</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
+            {location.pathname !== "/login" && (
+  <Link
+    to="/register"
+    className="px-3 py-1.5 md:px-5 md:py-2 bg-slate-900 text-white dark:bg-white dark:text-black font-medium rounded-lg hover:bg-slate-800 dark:hover:bg-gray-100 transition-colors text-xs md:text-sm flex items-center space-x-2"
+  >
+    <span>Get Started</span>
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M9 5l7 7-7 7"
+      />
+    </svg>
+  </Link>
+)}
           </div>
         </div>
       </div>
@@ -353,14 +358,15 @@ const LandingNavbar = () => {
             Contact Us
           </Link>
 
-          <Link
-            to="/login"
-            onClick={() => setIsOpen(false)}
-            className="block py-2"
-          >
-            Log in
-          </Link>
-
+          {location.pathname !== "/login" && (
+  <Link
+    to="/login"
+    onClick={() => setIsOpen(false)}
+    className="block py-2"
+  >
+    Log in
+  </Link>
+)}
           <button
             type="button"
             onClick={() => {
