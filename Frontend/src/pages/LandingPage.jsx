@@ -242,14 +242,50 @@ const LandingPage = () => {
               Find mentors to develop your skills and connect with like minded individuals.
             </p>
             <Link 
-              to="/login" 
-              className="inline-flex items-center space-x-2 bg-slate-900 text-white dark:bg-white dark:text-black font-medium py-3 px-8 rounded-lg hover:bg-slate-800 dark:hover:bg-gray-100 transition-colors text-lg"
-            >
-              <span>Try Ment2Be</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+  to="/login"
+  style={{
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '8px',
+    backgroundColor: 'white',
+    color: '#0f172a',
+    fontWeight: '600',
+    padding: '12px 32px',
+    borderRadius: '8px',
+    fontSize: '1.125rem',
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 15px rgba(255,255,255,0.15)',
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.backgroundColor = '#ff6fae';
+    e.currentTarget.style.color = 'white';
+    e.currentTarget.style.transform = 'scale(1.05)';
+    e.currentTarget.style.boxShadow = '0 20px 40px rgba(255, 111, 174, 0.45)';
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.backgroundColor = 'white';
+    e.currentTarget.style.color = '#0f172a';
+    e.currentTarget.style.transform = 'scale(1)';
+    e.currentTarget.style.boxShadow = '0 4px 15px rgba(255,255,255,0.15)';
+  }}
+  onMouseDown={(e) => {
+    e.currentTarget.style.transform = 'scale(0.95)';
+  }}
+  onMouseUp={(e) => {
+    e.currentTarget.style.transform = 'scale(1.05)';
+  }}
+>
+  <span>Try Ment2Be</span>
+  <svg 
+    style={{ width: '20px', height: '20px', transition: 'transform 0.3s ease' }}
+    fill="none" 
+    stroke="currentColor" 
+    viewBox="0 0 24 24"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
+</Link>
           </div>
           
           {/* Right Side - Illustration */}
